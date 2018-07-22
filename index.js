@@ -13,12 +13,13 @@ app.get('/',(req,res) =>
     res.json(data)
 ) 
 
-
+//this gives our api the ability to pull a user based on a specific id 
 app.get('/item/:id', (req, res) => {
     console.log(req.params.id)
     let user = Number(req.params.id)
     console.log(user)
     console.log(data[user])
+    res.send(data[user])
 })
 
 app.post('/newItem',(req,res) =>
